@@ -1,94 +1,80 @@
-import { nanoid } from 'nanoid';
-
 // HEAD DATA
 export const headData = {
-  title: '', // e.g: 'Name | Developer'
-  lang: '', // e.g: en, es, fr, jp
-  description: '', // e.g: Welcome to my website
+  title: 'Kadima Pods', // e.g: 'Name | Developer'
+  lang: 'en', // e.g: en, es, fr, jp
+  description: 'Kadima Pods', // e.g: Welcome to my website
 };
 
 // HERO DATA
 export const heroData = {
-  title: '',
-  name: '',
-  subtitle: '',
-  cta: '',
+  title: 'Welcome to',
+  name: 'Kadima Pods',
+  subtitle: 'Join a pod. Build a community.',
+  cta: 'Learn More',
 };
 
 // ABOUT DATA
-export const aboutData = {
-  img: 'profile.jpg',
-  paragraphOne: '',
-  paragraphTwo: '',
-  paragraphThree: '',
-  resume: 'https://www.resumemaker.online/es.php', // if no resume, the button will not show up
-};
+export const aboutData = [
+  {
+    question: 'What is a Pod?',
+    answer:
+      'A pod is a space centred around a common purpose/theme, that provides a place for people to connect over shared interests, founded on a passion for community, belonging and Judaism. Explore some pods below.',
+  },
+  {
+    question: 'What is the role of the Pod lead?',
+    answer:
+      "The pod lead ensures that the pod adhere's to its agreed constitution. For example, if the pod agrees to meet once a month, it is the pod lead's role to ensure this meet occurs.",
+  },
+  {
+    question: 'Where can I find more information?',
+    answer: 'Contact Rabbi Dovy or any of the pod leads below.',
+  },
+  {
+    question: 'What is the connection between a Pod and Kadimah?',
+    answer:
+      'Our aim is to build our future community. By associating each pod with the Kadima brand, they do not live in isolation. Throughout the year, pods will join forces for combined events including community wide events that include all the pods.',
+  },
+];
 
-// PROJECTS DATA
-export const projectsData = [
+// Pods DATA
+export const podsData = [
   {
-    id: nanoid(),
-    img: 'project.jpg',
-    title: '',
-    info: '',
-    info2: '',
-    url: '',
-    repo: 'https://github.com/cobidev/react-simplefolio', // if no repo, the button will not show up
+    name: 'Gemara Pod',
+    description:
+      'Learn Gemara with Rabbi Dovy each Wednesday night. All levels of experience welcome.',
+    lead: 'Rabbi Dovy',
+    contact: '0404 040 040',
+    emoji: '👨‍🏫',
   },
   {
-    id: nanoid(),
-    img: 'project.jpg',
-    title: '',
-    info: '',
-    info2: '',
-    url: '',
-    repo: 'https://github.com/cobidev/react-simplefolio', // if no repo, the button will not show up
+    name: "The Jewish Chef's Pod",
+    description:
+      "We cook a new traditional recipe each month guided by our community's leading cooks.",
+    lead: 'Zac Seidman',
+    contact: '0404 040 040',
+    emoji: '👩‍🍳',
   },
   {
-    id: nanoid(),
-    img: 'project.jpg',
-    title: '',
-    info: '',
-    info2: '',
-    url: '',
-    repo: 'https://github.com/cobidev/react-simplefolio', // if no repo, the button will not show up
+    name: 'Lawn Bowls Pod',
+    description:
+      'Play lawn bowls on the first Sunday of each month. Unwind with mates and bowl some lawns.',
+    lead: 'Tali Diamond',
+    contact: '0404 040 040',
+    emoji: '🎳',
   },
 ];
 
 // CONTACT DATA
 export const contactData = {
-  cta: '',
-  btn: '',
-  email: '',
+  cta: 'Want to start a pod? Get in touch!',
+  btn: 'Email Us',
+  email: 'rabbi.rapoport@kadimahsydney.org',
 };
 
 // FOOTER DATA
-export const footerData = {
-  networks: [
-    {
-      id: nanoid(),
-      name: 'twitter',
-      url: '',
-    },
-    {
-      id: nanoid(),
-      name: 'codepen',
-      url: '',
-    },
-    {
-      id: nanoid(),
-      name: 'linkedin',
-      url: '',
-    },
-    {
-      id: nanoid(),
-      name: 'github',
-      url: '',
-    },
-  ],
-};
+export const footerData = {};
 
 // Github start/fork buttons
 export const githubButtons = {
-  isEnabled: true, // set to false to disable the GitHub stars/fork buttons
+  isEnabled: false, // set to false to disable the GitHub stars/fork buttons
 };
