@@ -50,7 +50,7 @@ export const podsData = [
     name: "The Jewish Chef's Pod",
     description:
       "We cook a new traditional recipe each month guided by our community's leading cooks.",
-    lead: 'Zac Seidman',
+    lead: 'Ryan Snoyman',
     contact: '0404 040 040',
     emoji: '👩‍🍳',
   },
@@ -58,7 +58,7 @@ export const podsData = [
     name: 'Lawn Bowls Pod',
     description:
       'Play lawn bowls on the first Sunday of each month. Unwind with mates and bowl some lawns.',
-    lead: 'Tali Diamond',
+    lead: 'Liv Templeman',
     contact: '0404 040 040',
     emoji: '🎳',
   },
