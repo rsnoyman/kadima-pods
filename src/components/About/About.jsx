@@ -29,9 +29,9 @@ const About = () => {
           <Col>
             <Fade left={isDesktop} bottom={isMobile} duration={1000} delay={1000} distance="30px">
               <Accordion>
-                {about.map(({ question, answer }, i) => (
+                {about.map(({ question, answer, key }, i) => (
                   <Card
-                    key={question}
+                    key={key}
                     style={{
                       background: 'rgba(255, 255, 255, 0.3)',
                       fontSize: 18,

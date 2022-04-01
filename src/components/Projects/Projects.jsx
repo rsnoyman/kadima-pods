@@ -40,8 +40,8 @@ const Projects = () => {
           <Title title="Pods" />
           <Fade left={isDesktop} bottom={isMobile} duration={1000} delay={500} distance="30px">
             <CardDeck>
-              {pods.map(({ name, description, lead, contact, emoji }) => (
-                <Card key={name} style={{ minWidth: '18rem' }}>
+              {pods.map(({ name, description, lead, contact, emoji, key }) => (
+                <Card key={key} style={{ minWidth: '18rem' }}>
                   <Card.Body>
                     <Card.Title>
                       <PodTitle name={name} emoji={emoji} />
@@ -49,7 +49,7 @@ const Projects = () => {
                     <Card.Text style={{ textAlign: 'left' }}>{description}</Card.Text>
                   </Card.Body>
                   <Card.Footer>
-                    <medium className="text-muted">{`${lead} - ${contact}`}</medium>
+                    <span className="text-muted">{`${lead} - ${contact}`}</span>
                   </Card.Footer>
                 </Card>
               ))}

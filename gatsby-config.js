@@ -1,3 +1,7 @@
+require('dotenv').config({
+  path: `.env`,
+});
+
 module.exports = {
   plugins: [
     `gatsby-plugin-sass`,
@@ -5,6 +9,7 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-offline`,
+    `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -29,6 +34,13 @@ module.exports = {
         theme_color: `#02aab0`,
         display: `standalone`,
         icon: 'src/images/favicon.png',
+      },
+    },
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: `3y0jyvqkvr22`,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },
   ],

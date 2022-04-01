@@ -7,7 +7,9 @@ import Footer from './Footer/Footer';
 
 import { PortfolioProvider } from '../context/context';
 
-import { heroData, aboutData, podsData, contactData, footerData } from '../mock/data';
+import { heroData, contactData, footerData } from '../data/staticData';
+import useAboutData from '../data/aboutData';
+import usePodsData from '../data/podsData';
 
 function App() {
   const [hero, setHero] = useState({});
@@ -15,6 +17,9 @@ function App() {
   const [pods, setPods] = useState([]);
   const [contact, setContact] = useState({});
   const [footer, setFooter] = useState({});
+
+  const podsData = usePodsData();
+  const aboutData = useAboutData();
 
   useEffect(() => {
     setHero({ ...heroData });
