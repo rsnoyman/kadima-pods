@@ -2,31 +2,27 @@ import { useStaticQuery, graphql } from 'gatsby';
 
 // ABOUT DATA
 const useAboutData = () => {
-  const response = useStaticQuery(graphql`
+  const { allContentfulFrequentlyAskedQuestions } = useStaticQuery(graphql`
     query {
-      allContentfulFrequentlyAskedQuestions {
+      allContentfulFrequentlyAskedQuestions(sort: { fields: order }) {
         nodes {
-          question {
-            question
-          }
           answer {
             answer
           }
+          question {
+            question
+          }
           contentful_id
-          order
         }
       }
     }
   `);
 
-  const aboutData = response.allContentfulFrequentlyAskedQuestions.nodes
-    .sort((a, b) => a.order - b.order)
-    .map((node) => ({
-      ...node,
-      question: node.question.question,
-      answer: node.answer.answer,
-      key: node.contentful_id,
-    }));
+  const aboutData = allContentfulFrequentlyAskedQuestions.nodes.map((node) => ({
+    question: node.question.question,
+    answer: node.answer.answer,
+    key: node.contentful_id,
+  }));
 
   return aboutData;
 };

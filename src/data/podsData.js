@@ -2,7 +2,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 
 // Pods DATA
 const usePodsData = () => {
-  const response = useStaticQuery(graphql`
+  const { allContentfulPodDetails } = useStaticQuery(graphql`
     query {
       allContentfulPodDetails {
         nodes {
@@ -19,7 +19,7 @@ const usePodsData = () => {
     }
   `);
 
-  const podData = response.allContentfulPodDetails.nodes.map((node) => ({
+  const podData = allContentfulPodDetails.nodes.map((node) => ({
     ...node,
     description: node.description.description,
     key: node.contentful_id,
@@ -27,4 +27,5 @@ const usePodsData = () => {
 
   return podData;
 };
+
 export default usePodsData;
