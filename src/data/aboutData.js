@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 const useAboutData = () => {
   const { allContentfulFrequentlyAskedQuestions } = useStaticQuery(graphql`
     query {
-      allContentfulFrequentlyAskedQuestions(sort: { fields: order }) {
+      allContentfulFrequentlyAskedQuestions(sort: { fields: [order] }) {
         nodes {
           answer {
             answer
