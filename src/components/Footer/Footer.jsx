@@ -6,7 +6,7 @@ import GithubButtons from '../GithubButtons/GithubButtons';
 
 import { githubButtons } from '../../data/staticData';
 
-const Footer = () => {
+function Footer() {
   const { footer } = useContext(PortfolioContext);
   const { networks } = footer;
   const { isEnabled } = githubButtons;
@@ -36,7 +36,7 @@ const Footer = () => {
               );
             })}
         </div>
-        <hr />
+        <hr style={{ width: '100%' }} />
         <p className="footer__text">
           © {new Date().getFullYear()} - Template developed by{' '}
           <a href="https://github.com/cobidev" target="_blank" rel="noopener noreferrer">
@@ -48,6 +48,6 @@ const Footer = () => {
       </Container>
     </footer>
   );
-};
+}
 
 export default Footer;
