@@ -1,23 +1,46 @@
 import React, { useContext, useEffect, useState } from 'react';
 import Fade from 'react-reveal/Fade';
-import { Container, CardDeck, Card } from 'react-bootstrap';
+import { Container, Row, Col, Card } from 'react-bootstrap';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 import PortfolioContext from '../../context/context';
 import Title from '../Title/Title';
 
-const PodTitle = ({ name, emoji }) => (
-  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
-    <span style={{ fontSize: 24 }}>{name}</span>
-    <span style={{ fontSize: 36 }}>{emoji}</span>
-  </div>
-);
+const TitleWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+`;
+
+const PodName = styled.span`
+  font-size: 24px;
+`;
+
+const PodEmoji = styled.span`
+  font-size: 36px;
+`;
+
+const CardBody = styled(Card.Body)`
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+`;
+
+function PodTitle({ name, emoji }) {
+  return (
+    <TitleWrapper>
+      <PodName>{name}</PodName>
+      <PodEmoji>{emoji}</PodEmoji>
+    </TitleWrapper>
+  );
+}
 
 PodTitle.propTypes = {
   name: PropTypes.string,
   emoji: PropTypes.string,
 };
 
-const Projects = () => {
+function Projects() {
   const { pods } = useContext(PortfolioContext);
 
   const [isDesktop, setIsDesktop] = useState(false);
@@ -39,26 +62,28 @@ const Projects = () => {
         <div className="project-wrapper">
           <Title title="Pods" />
           <Fade left={isDesktop} bottom={isMobile} duration={1000} delay={500} distance="30px">
-            <CardDeck>
+            <Row xs={1} md={3} lg={4} className="g-4">
               {pods.map(({ name, description, lead, contact, emoji, key }) => (
-                <Card key={key} style={{ minWidth: '18rem' }}>
-                  <Card.Body>
-                    <Card.Title>
-                      <PodTitle name={name} emoji={emoji} />
-                    </Card.Title>
-                    <Card.Text style={{ textAlign: 'left' }}>{description}</Card.Text>
-                  </Card.Body>
-                  <Card.Footer>
-                    <span className="text-muted">{`${lead} - ${contact}`}</span>
-                  </Card.Footer>
-                </Card>
+                <Col>
+                  <Card key={key} className="h-100">
+                    <CardBody>
+                      <Card.Title>
+                        <PodTitle name={name} emoji={emoji} />
+                      </Card.Title>
+                      <Card.Text style={{ textAlign: 'left' }}>{description}</Card.Text>
+                    </CardBody>
+                    <Card.Footer>
+                      <span>{`${lead} - ${contact}`}</span>
+                    </Card.Footer>
+                  </Card>
+                </Col>
               ))}
-            </CardDeck>
+            </Row>
           </Fade>
         </div>
       </Container>
     </section>
   );
-};
+}
 
 export default Projects;
