@@ -64,8 +64,8 @@ function Projects() {
           <Fade left={isDesktop} bottom={isMobile} duration={1000} delay={500} distance="30px">
             <Row xs={1} md={3} lg={4} className="g-4">
               {pods.map(({ name, description, lead, contact, emoji, key }) => (
-                <Col>
-                  <Card key={key} className="h-100">
+                <Col key={key}>
+                  <Card className="h-100">
                     <CardBody>
                       <Card.Title>
                         <PodTitle name={name} emoji={emoji} />
